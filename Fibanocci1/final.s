@@ -3,14 +3,15 @@
    ENTRY
 __main function 
 	  
-	    MOV r1, #12
-		MOV r2, #4
-L1		CMP r1, r2	    
-		ITE LT
-        SUBLT r2, r2, r1; 
-		SUBGE r1, r1, r2;
-		BNE L1 ;
-		
+	  MOV r1, #0
+		MOV r2, #1
+		MOV r3, #5
+loop    CMP r3, #0
+		ADDGT r4 , r2 , r1 ;
+		MOVGT r1, r2 ;
+		MOVGT r2, r4 ;
+		SUBGT r3,#1;
+		BGT loop ;
 stop  B stop
       endfunc
-		end  
+		end   
