@@ -3,14 +3,15 @@
    ENTRY
 __main function 
 	  
-	    MOV r1, #12
-		MOV r2, #4
-L1		CMP r1, r2	    
-		ITE LT
-        SUBLT r2, r2, r1; 
-		SUBGE r1, r1, r2;
-		BNE L1 ;
+	    MOV r1, #15
+		MOV r2, #2
+	    UDIV r3, r1, r2
+		MLS r3, r3, r2, r1
+		CMP r3, #1
+		ITE NE
+		MOVNE r4, #2   ;even
+		MOVEQ r5, #1   ;odd
 		
 stop  B stop
       endfunc
-		end  
+		end   
